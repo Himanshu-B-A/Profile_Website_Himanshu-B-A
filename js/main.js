@@ -315,8 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="project-tech">
                         ${projectTech}
                     </div>
-                    <h3>Project Details</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
                 </div>
             `;
             
