@@ -311,7 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="modal-desc">
                     <h3>Project Overview</h3>
                     <p>${projectDesc}</p>
-                    <h3>Technologies Used</h3>
                     <div class="project-tech">
                         ${projectTech}
                     </div>
