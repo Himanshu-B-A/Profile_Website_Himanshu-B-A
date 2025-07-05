@@ -612,8 +612,8 @@ header.scrolled {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 6rem;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -622,7 +622,6 @@ header.scrolled {
 
 .about-image {
     position: relative;
-    max-width: 100%;
 }
 
 .image-frame {
@@ -655,20 +654,18 @@ header.scrolled {
 
 .experience-badge {
     position: absolute;
-    bottom: -2rem;
-    right: -2rem;
-    background: var(--gradient-primary);
-    padding: 2rem;
-    border-radius: 50%;
-    text-align: center;
-    animation: pulse-badge 2s infinite;
-    z-index: 2;
+    bottom: -30px;
+    right: -30px;
     width: 120px;
     height: 120px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     box-shadow: var(--shadow-md);
+    animation: pulse-badge 3s infinite;
 }
 
 @keyframes pulse-badge {
@@ -1461,89 +1458,131 @@ footer {
 
 @media (max-width: 992px) {
     html {
-        font-size: 55%;
+        font-size: 50%;
     }
     
     .hero {
-        min-height: 100vh;
-        padding: 12rem 0;
         flex-direction: column;
+        justify-content: center;
         text-align: center;
     }
     
     .hero-content {
-        width: 100%;
-        padding: 0 2rem;
+        max-width: 100%;
         margin-bottom: 5rem;
     }
     
     .hero-description {
-        font-size: 1.8rem;
-        max-width: 100%;
+        margin: 0 auto 4rem;
     }
     
     .hero-cta {
         justify-content: center;
-        gap: 2rem;
     }
     
     .hero-visual {
+        position: relative;
+        right: auto;
         width: 100%;
-        max-width: 45rem;
-        margin: 0 auto;
+        height: auto;
     }
     
     .avatar-container {
-        width: 30rem;
-        height: 30rem;
+        width: 300px;
+        height: 300px;
+    }
+    
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        max-width: 400px;
+        margin: 0 auto 5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
     
     .nav-menu {
         position: fixed;
-        top: 8rem;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 8rem);
-        background: var(--background-dark);
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--background-light);
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        justify-content: flex-start;
-        padding-top: 5rem;
-        transition: 0.3s ease-in-out;
-        z-index: 100;
+        transition: var(--transition-normal);
+        z-index: 999;
     }
     
     .nav-menu.active {
-        left: 0;
+        right: 0;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
     }
     
     .nav-menu li {
-        margin: 2.5rem 0;
+        margin: 2rem 0;
     }
     
     .nav-toggle {
-        display: flex;
+        display: block;
+        z-index: 1000;
+    }
+    
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 3rem;
     }
 }
 
 @media (max-width: 768px) {
     .section-title {
-        font-size: 3.2rem;
+        font-size: 3.5rem;
     }
     
     .glitch-text {
-        font-size: 4rem;
+        font-size: 5rem;
     }
     
-    .hero-subtitle {
-        font-size: 2rem;
+    .stats-container {
+        grid-template-columns: 1fr;
     }
     
-    .hero-description {
-        font-size: 1.6rem;
-        margin: 2rem auto;
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
     
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-body {
+        padding: 3rem 2rem;
+    }
+    
+    .contact-form {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 576px) {
     .hero-cta {
         flex-direction: column;
         gap: 1.5rem;
@@ -1551,71 +1590,24 @@ footer {
     
     .btn {
         width: 100%;
-        max-width: 25rem;
         text-align: center;
     }
     
-    .about-content {
+    .projects-filter {
         flex-direction: column;
-        gap: 4rem;
+        gap: 1rem;
     }
     
-    .about-image {
+    .filter-btn {
         width: 100%;
-        max-width: 35rem;
-        margin: 0 auto;
     }
     
-    .experience-badge {
-        right: 0;
-        transform: translateX(25%);
-    }
-}
-
-@media (max-width: 576px) {
-    html {
-        font-size: 50%;
+    .testimonial-item {
+        padding: 3rem 2rem;
     }
     
-    .hero-content {
-        padding: 0 1.5rem;
-    }
-    
-    .glitch-text {
-        font-size: 3.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.8rem;
-    }
-    
-    .hero-description {
-        font-size: 1.5rem;
-    }
-    
-    .hero-visual {
-        max-width: 35rem;
-    }
-    
-    .avatar-container {
-        width: 25rem;
-        height: 25rem;
-    }
-    
-    .btn {
-        padding: 1rem 2.5rem;
-        font-size: 1.4rem;
-    }
-    
-    .nav-menu {
-        padding-top: 3rem;
-    }
-    
-    .nav-menu li {
-        margin: 2rem 0;
-    }
-    
-    .nav-link {
-        font-size: 1.8rem;
+    .testimonial-author {
+        flex-direction: column;
+        text-align: center;
     }
 }
