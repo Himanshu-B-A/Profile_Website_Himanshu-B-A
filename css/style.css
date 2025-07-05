@@ -622,6 +622,7 @@ header.scrolled {
 
 .about-image {
     position: relative;
+    max-width: 100%;
 }
 
 .image-frame {
@@ -654,18 +655,20 @@ header.scrolled {
 
 .experience-badge {
     position: absolute;
-    bottom: -30px;
-    right: -30px;
+    bottom: -2rem;
+    right: -2rem;
+    background: var(--gradient-primary);
+    padding: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    animation: pulse-badge 2s infinite;
+    z-index: 2;
     width: 120px;
     height: 120px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     box-shadow: var(--shadow-md);
-    animation: pulse-badge 3s infinite;
 }
 
 @keyframes pulse-badge {
@@ -1492,14 +1495,24 @@ footer {
         height: 300px;
     }
     
-    .about-content,
-    .contact-content {
+    .about-content {
         grid-template-columns: 1fr;
+        gap: 4rem;
     }
     
     .about-image {
         max-width: 400px;
-        margin: 0 auto 5rem;
+        margin: 0 auto;
+        padding-bottom: 3rem;
+    }
+    
+    .experience-badge {
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        width: 100px;
+        height: 100px;
+        padding: 1.5rem;
     }
     
     .projects-grid {
@@ -1580,6 +1593,24 @@ footer {
     .contact-form {
         padding: 3rem 2rem;
     }
+    
+    .about-image {
+        max-width: 300px;
+    }
+    
+    .experience-badge {
+        width: 90px;
+        height: 90px;
+        padding: 1.2rem;
+    }
+    
+    .experience-badge .years {
+        font-size: 2.4rem;
+    }
+    
+    .experience-badge .text {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1609,5 +1640,23 @@ footer {
     .testimonial-author {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .about-image {
+        max-width: 250px;
+    }
+    
+    .experience-badge {
+        width: 80px;
+        height: 80px;
+        padding: 1rem;
+    }
+    
+    .experience-badge .years {
+        font-size: 2rem;
+    }
+    
+    .experience-badge .text {
+        font-size: 1.1rem;
     }
 }
