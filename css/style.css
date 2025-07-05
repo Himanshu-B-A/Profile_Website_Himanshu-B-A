@@ -658,16 +658,17 @@ header.scrolled {
     bottom: -2rem;
     right: -2rem;
     background: var(--gradient-primary);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 50%;
     text-align: center;
     animation: pulse-badge 2s infinite;
     z-index: 2;
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     box-shadow: var(--shadow-md);
 }
 
@@ -683,15 +684,16 @@ header.scrolled {
 }
 
 .experience-badge .years {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 700;
     line-height: 1;
+    margin-bottom: 0.2rem;
 }
 
 .experience-badge .text {
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1.1rem;
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .about-text h3 {
@@ -1498,21 +1500,31 @@ footer {
     .about-content {
         grid-template-columns: 1fr;
         gap: 4rem;
+        padding: 0 2rem;
     }
     
     .about-image {
         max-width: 400px;
         margin: 0 auto;
-        padding-bottom: 3rem;
+        padding-bottom: 4rem;
     }
     
     .experience-badge {
-        bottom: 0;
+        bottom: 1rem;
         right: 50%;
         transform: translateX(50%);
         width: 100px;
         height: 100px;
-        padding: 1.5rem;
+        padding: 1.2rem;
+    }
+    
+    .experience-badge .years {
+        font-size: 2.4rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .experience-badge .text {
+        font-size: 1rem;
     }
     
     .projects-grid {
@@ -1595,21 +1607,23 @@ footer {
     }
     
     .about-image {
-        max-width: 300px;
+        max-width: 320px;
+        padding-bottom: 3.5rem;
     }
     
     .experience-badge {
         width: 90px;
         height: 90px;
-        padding: 1.2rem;
+        padding: 1rem;
+        bottom: 0.5rem;
     }
     
     .experience-badge .years {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
     
     .experience-badge .text {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -1643,13 +1657,14 @@ footer {
     }
     
     .about-image {
-        max-width: 250px;
+        max-width: 280px;
+        padding-bottom: 3rem;
     }
     
     .experience-badge {
-        width: 80px;
-        height: 80px;
-        padding: 1rem;
+        width: 85px;
+        height: 85px;
+        padding: 0.8rem;
     }
     
     .experience-badge .years {
@@ -1657,6 +1672,6 @@ footer {
     }
     
     .experience-badge .text {
-        font-size: 1.1rem;
+        font-size: 0.85rem;
     }
 }
