@@ -65,17 +65,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const body = document.body;
     
-    navToggle.addEventListener('click', () => {
+    // Function to toggle navigation
+    function toggleNav() {
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    // Toggle navigation on button click
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleNav();
     });
     
+    // Close navigation when clicking outside
+    document.addEventListener('click', (e) => {
+        const isClickInside = navMenu.contains(e.target) || navToggle.contains(e.target);
+        if (!isClickInside && navMenu.classList.contains('active')) {
+            toggleNav();
+        }
+    });
+    
+    // Close navigation when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (navMenu.classList.contains('active')) {
+                toggleNav();
+            }
         });
+    });
+    
+    // Close navigation on resize if open
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 992 && navMenu.classList.contains('active')) {
+            toggleNav();
+        }
     });
 });
 
