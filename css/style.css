@@ -1554,19 +1554,19 @@ footer {
 
 @media (max-width: 768px) {
     .section-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
     
     .glitch-text {
-        font-size: 3.2rem;
+        font-size: 5rem;
     }
     
     .stats-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
     
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
     
     .projects-grid {
@@ -1574,35 +1574,11 @@ footer {
     }
     
     .modal-body {
-        padding: 2rem;
+        padding: 3rem 2rem;
     }
     
     .contact-form {
-        margin-top: 3rem;
-    }
-
-    .hero-content {
-        padding: 2rem 0;
-        text-align: center;
-    }
-
-    .about-content {
-        padding: 2rem 0;
-    }
-
-    .experience-badge {
-        transform: scale(0.8);
-        margin: 0 auto 2rem;
-    }
-
-    .about-text h3 {
-        font-size: 2.4rem;
-        text-align: center;
-    }
-
-    .about-text p {
-        font-size: 1.6rem;
-        text-align: center;
+        padding: 3rem 2rem;
     }
 }
 
@@ -1613,8 +1589,8 @@ footer {
     }
     
     .btn {
-        padding: 1rem 2.5rem;
-        font-size: 1.4rem;
+        width: 100%;
+        text-align: center;
     }
     
     .projects-filter {
@@ -1627,64 +1603,11 @@ footer {
     }
     
     .testimonial-item {
-        padding: 2rem;
+        padding: 3rem 2rem;
     }
     
     .testimonial-author {
         flex-direction: column;
         text-align: center;
-    }
-
-    .section-title {
-        font-size: 2.8rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.8rem;
-    }
-
-    .hero-description {
-        font-size: 1.6rem;
-        margin: 1.5rem 0;
-    }
-
-    .container {
-        padding: 0 1.5rem;
-    }
-
-    .about-image {
-        margin-bottom: 3rem;
-    }
-
-    .image-frame {
-        max-width: 280px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 400px) {
-    html {
-        font-size: 50%;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-content {
-        padding: 1.5rem 0;
-    }
-
-    .experience-badge {
-        transform: scale(0.7);
-    }
-
-    .stats-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .stat-item {
-        padding: 1.5rem;
     }
 }
