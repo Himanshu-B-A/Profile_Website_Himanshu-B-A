@@ -608,16 +608,19 @@ header.scrolled {
 /* ===== ABOUT SECTION ===== */
 .about {
     background-color: var(--background-light);
+    position: relative;
+    padding-top: 8rem;
 }
 
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 6rem;
-    align-items: center;
+    align-items: start;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
 }
 
 .about-image {
@@ -655,16 +658,16 @@ header.scrolled {
 
 .experience-badge {
     position: absolute;
-    bottom: -2rem;
-    right: -2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: var(--gradient-primary);
-    padding: 1.5rem;
+    padding: 3rem;
     border-radius: 50%;
     text-align: center;
-    animation: pulse-badge 2s infinite;
     z-index: 2;
-    width: 110px;
-    height: 110px;
+    width: 180px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -672,28 +675,17 @@ header.scrolled {
     box-shadow: var(--shadow-md);
 }
 
-@keyframes pulse-badge {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(110, 87, 224, 0.7);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(110, 87, 224, 0);
-    }
-}
-
 .experience-badge .years {
-    font-size: 2.8rem;
+    font-size: 3.6rem;
     font-weight: 700;
     line-height: 1;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
 }
 
 .experience-badge .text {
-    font-size: 1.1rem;
-    line-height: 1.2;
-    white-space: nowrap;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    white-space: normal;
 }
 
 .about-text h3 {
@@ -1497,34 +1489,34 @@ footer {
         height: 300px;
     }
     
+    .about {
+        padding-top: 6rem;
+    }
+    
+    .section-header {
+        margin-bottom: 15rem;
+    }
+    
     .about-content {
         grid-template-columns: 1fr;
         gap: 4rem;
         padding: 0 2rem;
     }
     
-    .about-image {
-        max-width: 400px;
-        margin: 0 auto;
-        padding-bottom: 4rem;
-    }
-    
     .experience-badge {
-        bottom: 1rem;
-        right: 50%;
-        transform: translateX(50%);
-        width: 100px;
-        height: 100px;
-        padding: 1.2rem;
+        top: 0;
+        transform: translate(-50%, -50%);
+        width: 160px;
+        height: 160px;
+        padding: 2rem;
     }
     
     .experience-badge .years {
-        font-size: 2.4rem;
-        margin-bottom: 0.2rem;
+        font-size: 3.2rem;
     }
     
     .experience-badge .text {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
     
     .projects-grid {
@@ -1606,24 +1598,26 @@ footer {
         padding: 3rem 2rem;
     }
     
-    .about-image {
-        max-width: 320px;
-        padding-bottom: 3.5rem;
+    .about {
+        padding-top: 5rem;
+    }
+    
+    .section-header {
+        margin-bottom: 12rem;
     }
     
     .experience-badge {
-        width: 90px;
-        height: 90px;
-        padding: 1rem;
-        bottom: 0.5rem;
+        width: 140px;
+        height: 140px;
+        padding: 1.8rem;
     }
     
     .experience-badge .years {
-        font-size: 2.2rem;
+        font-size: 3rem;
     }
     
     .experience-badge .text {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -1656,22 +1650,25 @@ footer {
         text-align: center;
     }
     
-    .about-image {
-        max-width: 280px;
-        padding-bottom: 3rem;
+    .about {
+        padding-top: 4rem;
+    }
+    
+    .section-header {
+        margin-bottom: 10rem;
     }
     
     .experience-badge {
-        width: 85px;
-        height: 85px;
-        padding: 0.8rem;
+        width: 120px;
+        height: 120px;
+        padding: 1.5rem;
     }
     
     .experience-badge .years {
-        font-size: 2rem;
+        font-size: 2.8rem;
     }
     
     .experience-badge .text {
-        font-size: 0.85rem;
+        font-size: 1.1rem;
     }
 }
