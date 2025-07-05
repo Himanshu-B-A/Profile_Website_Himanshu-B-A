@@ -65,43 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-    const body = document.body;
     
-    // Function to toggle navigation
-    function toggleNav() {
+    navToggle.addEventListener('click', () => {
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
-        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    }
-    
-    // Toggle navigation on button click
-    navToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleNav();
     });
     
-    // Close navigation when clicking outside
-    document.addEventListener('click', (e) => {
-        const isClickInside = navMenu.contains(e.target) || navToggle.contains(e.target);
-        if (!isClickInside && navMenu.classList.contains('active')) {
-            toggleNav();
-        }
-    });
-    
-    // Close navigation when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
-                toggleNav();
-            }
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
         });
-    });
-    
-    // Close navigation on resize if open
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 992 && navMenu.classList.contains('active')) {
-            toggleNav();
-        }
     });
 });
 
@@ -337,9 +311,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="modal-desc">
                     <h3>Project Overview</h3>
                     <p>${projectDesc}</p>
+                    <h3>Technologies Used</h3>
                     <div class="project-tech">
                         ${projectTech}
                     </div>
+                    <h3>Project Details</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
                 </div>
             `;
             
